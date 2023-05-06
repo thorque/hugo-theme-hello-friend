@@ -56,6 +56,7 @@
         {{ else }}
           {{ if .Truncated }}
             {{ .Summary }}
+            <div><a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a></div>
           {{ end }}
         {{ end }}
       </div>

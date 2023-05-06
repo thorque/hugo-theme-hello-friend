@@ -51,13 +51,9 @@
       {{ end }}
 
       <div class="post-content">
-        {{ with .Description }}
-          {{ . | markdownify }}
-        {{ else }}
-          {{ if .Truncated }}
-            >>>> {{ .Summary }}
-            <div><a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a></div>
-          {{ end }}
+        {{ if .Truncated }}
+          >>>> {{ .Summary }}
+          <div><a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a></div>
         {{ end }}
       </div>
       {{ if not .Params.hideReadMore }}
